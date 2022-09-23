@@ -7,6 +7,7 @@ import { QUEUE_NAME as BULL_QUEUE_NAME } from "./bull/bull.constants";
 import { QUEUE_NAME as BULLMQ_QUEUE_NAME } from "./bullMQ/bullMQ.constants";
 import { BullProcessor } from "./bull/bull.processor";
 import { BullMQProcessor } from "./bullMQ/bullMQ.processor";
+import { BullMQEventsListener } from "./bullMQ/bullMQ.eventsListener";
 
 @Module({
   imports: [
@@ -30,6 +31,7 @@ import { BullMQProcessor } from "./bullMQ/bullMQ.processor";
   providers: [
     AppService,
     BullProcessor,
+    BullMQEventsListener,
     BullMQProcessor,
   ],
 })

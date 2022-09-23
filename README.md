@@ -29,7 +29,13 @@
 ## Installation
 
 ```bash
+$ brew install redis
 $ npm install
+```
+
+## Running redis
+```bash
+$ redis-server
 ```
 
 ## Running the app

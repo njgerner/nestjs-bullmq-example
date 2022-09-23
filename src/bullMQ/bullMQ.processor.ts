@@ -11,7 +11,7 @@ export class BullMQProcessor extends WorkerHost {
       case 'stop':
         return this.stop(job);
       default:
-        throw new Error(`Process ${token} not implemented`);
+        throw new Error(`Process ${job.name} not implemented`);
     }
   }
 

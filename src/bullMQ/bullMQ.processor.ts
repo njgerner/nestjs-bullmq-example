@@ -1,10 +1,10 @@
 import { Processor, WorkerHost } from "@nestjs/bullmq";
-import Bull from 'bull';
+import Job from 'bullmq';
 import { QUEUE_NAME } from "./bullMQ.constants";
 
 @Processor(QUEUE_NAME)
 export class BullMQProcessor extends WorkerHost {
-  async process(job: Bull.Job<any>, token: string | undefined): Promise<any> {
+  async process(job: Job<any>, token: string | undefined): Promise<any> {
     switch (job.name) {
       case 'start':
         return this.start(job);
@@ -15,11 +15,11 @@ export class BullMQProcessor extends WorkerHost {
     }
   }
 
-  async start(job: Bull.Job<any>): Promise<any> {
+  async start(job: Job<any>): Promise<any> {
     return Promise.resolve(`START ${QUEUE_NAME}-${job.id}`)
   }
 
-  async stop(job: Bull.Job<any>): Promise<any> {
+  async stop(job: Job<any>): Promise<any> {
     return Promise.resolve(`STOP ${QUEUE_NAME}-${job.id}`)
   }
 

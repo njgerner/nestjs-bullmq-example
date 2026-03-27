@@ -1,0 +1,27 @@
+# Canon configuration — https://canonhq.co/docs/config
+# team: my-team
+
+ticket_systems:
+  primary:
+    system: github
+    # project: "Owner/repo"
+    # status_map:
+    #   forward:
+    #     draft: "Backlog"
+    #     todo: "To Do"
+    #     in_progress: "In Progress"
+    #     done: "Done"
+    #     blocked: "Blocked"
+    #     deprecated: "Won't Do"
+
+specs:
+  auto_tickets: false
+  require_review: true
+  doc_paths:
+    - "docs/specs/*.md"
+
+agents:
+  doc_updates: true
+  pr_analysis: true
+  stale_detection: "30d"
+  realization_check: true
